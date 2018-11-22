@@ -122,13 +122,13 @@ return [
 
         [
             'text'        => 'Users',
-            'url'         => 'users',
+            'url'         => '/admin/users',
             'icon'        => 'table',
         ],
 
         [
             'text'        => 'Products',
-            'url'         => 'products',
+            'url'         => '/admin/products',
             'icon'        => 'table',
         ],
 

@@ -14,9 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', function () {
+/*Route::get('/admin', function () {
     return view('layouts.admin');
-});
+});*/
 
 Route::get('/', [
     'uses' => 'ProductController@getIndex',
@@ -68,21 +68,29 @@ Route::group(['prefix' => 'user'], function () {
     });
 });
 
-//CRUD Products
-Route::get('/products', 'ProductController@index')->name('products.index');
-Route::get('/products/add', 'ProductController@add')->name('products.add');
-Route::post('/products/insert', 'ProductController@insert')->name('products.insert');
-Route::get('/products/edit/{id}', 'ProductController@edit')->name('products.edit');
-Route::post('/products/update/{id}', 'ProductController@update')->name('products.update');
-Route::get('/products/delete/{id}', 'ProductController@delete')->name('products.delete');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function()
+{
+    Route::get('/', function () {
+        return view('layouts.admin');
+    });
 
-//CRUD Users
-Route::get('/users', 'UserController@index')->name('user.index');
-Route::get('/users/add', 'UserController@add')->name('user.add');
-Route::post('/users/insert', 'UserController@insert')->name('user.insert');
-Route::get('/users/edit/{id}', 'UserController@edit')->name('user.edit');
-Route::post('/users/update/{id}', 'UserController@update')->name('user.update');
-Route::get('/users/delete/{id}', 'UserController@delete')->name('user.delete');
+    //CRUD Products
+    Route::get('/products', 'ProductController@index')->name('products.index');
+    Route::get('/products/add', 'ProductController@add')->name('products.add');
+    Route::post('/products/insert', 'ProductController@insert')->name('products.insert');
+    Route::get('/products/edit/{id}', 'ProductController@edit')->name('products.edit');
+    Route::post('/products/update/{id}', 'ProductController@update')->name('products.update');
+    Route::get('/products/delete/{id}', 'ProductController@delete')->name('products.delete');
+
+    //CRUD Users
+    Route::get('/users', 'UserController@index')->name('user.index');
+    Route::get('/users/add', 'UserController@add')->name('user.add');
+    Route::post('/users/insert', 'UserController@insert')->name('user.insert');
+    Route::get('/users/edit/{id}', 'UserController@edit')->name('user.edit');
+    Route::post('/users/update/{id}', 'UserController@update')->name('user.update');
+    Route::get('/users/delete/{id}', 'UserController@delete')->name('user.delete');
+});
+
 
 Auth::routes();
 

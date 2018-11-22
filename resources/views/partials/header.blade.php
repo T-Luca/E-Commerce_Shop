@@ -12,9 +12,25 @@
             <a class="navbar-brand" href="{{ route('product.index') }}">E-Shop</a>
         </div>
 
+        <!-- displays login type(user/admin) -->
+        <div class="col-xs-1 text-center">
+        @if(Auth::check() && Auth::user()->role_id == 1)
+                <p style="color:grey;">Logged in as <span style="color:blue">Admin</span></p>
+        @elseif(Auth::check() && Auth::user()->role_id == 0)
+                <p style="color:grey;">Logged in as <span style="color:blue">User</span></p>
+        @endif
+        </div>
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                @if(Auth::check() && Auth::user()->role_id == 1)
+                    <li>
+                        <a href="/admin" role="button"
+                           aria-expanded="false"><i class="fa fa-table" ></i> Admin Panel </a>
+                    </li>
+                @endif
+
                 <li>
                     <a href="{{ route('product.shoppingCart') }}">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
@@ -31,8 +47,8 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="{{ route('user.logout') }}">Logout</a></li>
                         @else
-                            <li><a href="{{ route('register') }}">Signup</a></li>
-                            <li><a href="{{ route('login') }}">Signin</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
                         @endif
                     </ul>
                 </li>
