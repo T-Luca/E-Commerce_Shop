@@ -123,7 +123,7 @@ return [
         [
             'text'        => 'Users',
             'url'         => '/admin/users',
-            'icon'        => 'table',
+            'icon'        => 'users',
         ],
 
         [

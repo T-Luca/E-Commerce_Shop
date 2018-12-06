@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Cart;
 use Session;
 
 class ProductController extends Controller
@@ -84,4 +85,12 @@ class ProductController extends Controller
 
         return redirect()->route('products.index');
     }
+
+    public function show($id)
+    {
+        $product = Product::where('id', $id)->firstOrFail();
+        $interested = Product::where('id', '!=', $id)->get()->random(4);
+        return view('products.viewprod')->with(['product' => $product, 'interested' => $interested]);
+    }
+
 }

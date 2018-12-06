@@ -21,7 +21,14 @@ Route::get('/', function () {
 Route::get('/', [
     'uses' => 'ProductController@getIndex',
     'as' => 'product.index'
+
 ]);
+
+//search products
+Route::post ( '/search', 'SearchController@search' );
+
+//details product
+Route::resource('shop', 'ProductController', ['only' => ['show']]);
 
 Route::get('/shopping-cart', [
     'uses' => 'CartController@getCart',
@@ -37,7 +44,6 @@ Route::get('/reduce/{id}', [
     'uses' => 'CartController@getReduceByOne',
     'as' => 'product.reduceByOne'
 ]);
-
 
 
 Route::group(['prefix' => 'user'], function () {

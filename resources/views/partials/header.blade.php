@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -24,6 +24,21 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+
+                <!-- Search box -->
+                <li>
+                    <form class="navbar-form" action="/search" method="POST" role="search">
+                        {{ csrf_field() }}
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="q" placeholder="Search products"> <span class="input-group-btn">
+					        <button type="submit" class="btn btn-default">
+						        <span class="glyphicon glyphicon-search"></span>
+					        </button>
+				            </span>
+                        </div>
+                    </form>
+                </li>
+
                 @if(Auth::check() && Auth::user()->role_id == 1)
                     <li>
                         <a href="/admin" role="button"

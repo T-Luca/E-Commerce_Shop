@@ -9,12 +9,11 @@
 
     @yield('styles')
 </head>
-<body style="background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SdC710cgzjajkibtg/videoblocks-terminal-video-technology-background-circuit-board-futuristic-server-code-processing-pcb-code-html-red-blue-background-with-digital-integrated-network-technology-printed-circuit-board_shkvymjzz_thumbnail-full01.png); background-size: cover;">
+<body style="background-image: url(https://uploads-ssl.webflow.com/583347ca8f6c7ee058111b55/5acea005da5cf68de62c2356_xscp-blog-image.jpg); background-size: cover;">
 @include('partials.header')
 <div class="container">
     @yield('content')
 </div>
-
 <script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 @yield('scripts')

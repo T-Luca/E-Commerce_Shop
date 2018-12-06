@@ -29,12 +29,12 @@
                                 <textarea name="email" id="email" class="form-control">{{ $user->email }}</textarea>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label class="control-label col-sm-2" >Password</label>
                             <div class="col-sm-10">
                                 <textarea name="password" id="password" class="form-control">{{ $user->password }}</textarea>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="form-group">
                             <label class="control-label col-sm-2" >Role ID</label>
                             <div class="col-sm-10">

@@ -30,6 +30,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="control-label col-sm-2" >Image Path</label>
+                            <div class="col-sm-10">
+                                <textarea name="imagePath" id="imagePath" class="form-control">{{ $product->imagePath }}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="control-label col-sm-2" >Price</label>
                             <div class="col-sm-10">
                                 <textarea name="price" id="price" class="form-control">{{ $product->price }}</textarea>
