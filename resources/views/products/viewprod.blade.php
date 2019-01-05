@@ -10,11 +10,12 @@
 
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ $product->imagePath }}" alt="product" class="img-responsive">
+                <img src="{{ $product->imagePath }}" alt="product" class="img-responsive" height="300" width="300">
             </div>
 
             <div class="col-md-8">
                 <h3>${{ $product->price }}</h3>
+                <h5>In Stock: {{ $product->stock }}</h5>
                 <form>
                     {!! csrf_field() !!}
                     <input type="hidden" name="id" value="{{ $product->id }}">

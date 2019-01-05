@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    @include('shop.prodfilter')
     @foreach($products->chunk(3) as $productChunk)
         <div class="row">
             @foreach($productChunk as $product)
@@ -26,4 +27,8 @@
             @endforeach
         </div>
     @endforeach
+@endsection
+
+@section('paginate')
+    {{ $products->links() }}
 @endsection

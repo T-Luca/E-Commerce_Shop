@@ -23,7 +23,9 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Image</th>
+                                <th>Stock</th>
                                 <th>Price</th>
+                                <th>Category ID</th>
                                 <th style="width: 100px">Action</th>
                             </tr>
 
@@ -32,7 +34,9 @@
                                     <td>{{ $product->title }} </td>
                                     <td>{{ $product->description }} </td>
                                     <td><img src="{{ $product->imagePath }}" height="100" width="100"></td>
+                                    <td>{{ $product->stock }} </td>
                                     <td>{{ $product->price }} </td>
+                                    <td>{{ $product->category_id }} </td>
                                     <td>
                                         <a href="{{ route('products.edit', $product->id) }}" class="label label-warning">Edit</a>
                                         <a href="{{ route('products.delete', $product->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>

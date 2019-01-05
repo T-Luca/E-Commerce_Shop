@@ -19,7 +19,9 @@ class CreateProductsTable extends Migration
             $table->string('imagePath');
             $table->string('title');
             $table->text('description');
+            $table->integer('stock');
             $table->integer('price');
+            $table->integer('category_id');
         });
     }
     /**

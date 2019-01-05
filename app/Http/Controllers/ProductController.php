@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function getIndex()
     {
-        $products = Product::all();
+        $products = Product::paginate(9);
         return view('shop.index', ['products' => $products]);
     }
 
@@ -92,5 +92,4 @@ class ProductController extends Controller
         $interested = Product::where('id', '!=', $id)->get()->random(4);
         return view('products.viewprod')->with(['product' => $product, 'interested' => $interested]);
     }
-
 }

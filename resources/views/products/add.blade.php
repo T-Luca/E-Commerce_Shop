@@ -36,9 +36,21 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="control-label col-sm-2" >Stock</label>
+                            <div class="col-sm-10">
+                                <textarea name="stock" id="stock" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="control-label col-sm-2" >Price</label>
                             <div class="col-sm-10">
                                 <textarea name="price" id="price" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" >Category ID</label>
+                            <div class="col-sm-10">
+                                <textarea name="category_id" id="category_id" class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
