@@ -40,7 +40,7 @@ Route::get('/filter', function()
             $query-> where('price','>=',$min_price);
             $query-> where('price','<=',$max_price);
         }
-    })->paginate(9);
+    })->orderBy('price')->paginate(9);
     return view('shop.index', ['products' => $products]);
 });
 
