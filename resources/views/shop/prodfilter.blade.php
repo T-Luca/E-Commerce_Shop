@@ -1,8 +1,6 @@
-<div class="row" style="background-color:#ffa560">
-    </br>
+<form action="/filter">
 
-    <form action="/filter">
-        &emsp;
+    <br>
     <label for="">Price</label>&emsp;
     min: <input type="text" name="min_price" value="{{Request::get('min_price')}}">&emsp;
     max: <input type="text" name="max_price" value="{{Request::get('max_price')}}">
@@ -18,8 +16,8 @@
     <input type="checkbox" name="categories[]" value="3" {{in_array(3, $categories ) ? 'checked' :'' }}>
     Gadgets
     &emsp;
+
     <button>Go</button>
 </form>
-</br>
-</div>
 
+<hr>

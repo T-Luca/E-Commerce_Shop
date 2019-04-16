@@ -13,20 +13,9 @@
                 <img src="{{ $product->imagePath }}" alt="product" class="img-responsive" height="300" width="300">
             </div>
 
-            @if($product->id == 1)
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/IHpS17qRHpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            @elseif ($product->id == 2)
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/gRYAiinSso4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            @elseif ($product->id == 3)
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/0lMtXQywVQs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            @elseif ($product->id == 8)
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4lfnSxxWL0E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            @endif
-
             <div class="col-md-8">
                 <h3>${{ $product->price }}</h3>
                 <h5>In Stock: {{ $product->stock }}</h5>
-
                 <form>
                     {!! csrf_field() !!}
                     <input type="hidden" name="id" value="{{ $product->id }}">

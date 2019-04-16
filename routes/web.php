@@ -104,11 +104,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     Route::get('/users/delete/{id}', 'UserController@delete')->name('user.delete');
 });
 
-//Predictive search
-Route::post('/fetch', 'AutocompleteController@fetch')->name('autocomplete.fetch');
-
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
