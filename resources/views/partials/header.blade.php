@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,6 +19,7 @@
             <a class="navbar-brand" href="{{ route('product.index') }}">E-Shop</a>
         </div>
 
+
         <!-- displays login type(user/admin) -->
         <div class="col-xs-1 text-center">
         @if(Auth::check() && Auth::user()->role_id == 1)
@@ -25,18 +33,14 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
 
-                <!-- Search box -->
+                <!-- Share Buttons -->
                 <li>
-                    <form class="navbar-form" action="/search" method="POST" role="search">
+                    <div class="navbar-form">
                         {{ csrf_field() }}
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="q" placeholder="Search products"> <span class="input-group-btn">
-					        <button type="submit" class="btn btn-default">
-						        <span class="glyphicon glyphicon-search"></span>
-					        </button>
-				            </span>
-                        </div>
-                    </form>
+                        <a title="Facebook Share" href="http://www.facebook.com/sharer.php? u=http://eshop.com/" target="_blank"><img  src="http://kies.shariaeconomicforum.org/public/assets/social-share-button/facebook-03210e1663ee772e93ed5d344cdb36657b68342821aaebe982f2f984915990b3.svg" width="30" height="30" alt="Share"/></a>
+                        <a href="https://twitter.com/share?hashtags=awesome,sharing&text=Visit My Shop&via=MyTwitterHandle"><img src="https://www.axioart.com/pics/twitter-2.png" width="30" height="30" title="Share this page on Twitter" /></a>
+                        &ensp;
+                    </div>
                 </li>
 
                 @if(Auth::check() && Auth::user()->role_id == 1)
@@ -71,3 +75,5 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+
+</html>
